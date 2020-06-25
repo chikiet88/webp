@@ -1,0 +1,27 @@
+
+cd C:\Users\MyPC\Desktop\Tazaskin\webp\bin
+for /R . %I in (*.png) do ( cwebp.exe %I -o %~nfI.webp )
+for /R . %I in (*.jpg) do ( cwebp.exe %I -o %~nfI.webp )
+cd hinh
+Ren *.webp *.
+Ren *.png *.webp
+Ren *.jpg *.webp
+<picture>
+  <source type="image/webp" srcset="flower.webp">
+  <source type="image/png" srcset="flower.jpg">
+  <img src="flower.jpg" alt="">
+</picture>
+
+
+<picture>
+                  <source type="image/webp" srcset="<?php echo preg_replace('/\.[^.]+$/', '.',$hinh1).'webp'; ?>">
+                  <source type="image/jpg" srcset="<?php echo $hinh1; ?>">
+                  <img src="<?php echo $hinh1; ?>" alt="">
+                </picture>   
+
+cd C:\Users\MyPC\Desktop\Tazaskin\webp\bin
+for /R . %I in (*.jpg) do ( cwebp.exe %I -o %~nfI.webp )
+cd hinh
+Del *.jpg
+Ren *.webp *.
+Ren *.jpg *.webp

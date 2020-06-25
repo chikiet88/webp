@@ -1,0 +1,11 @@
+cd C:\Users\MyPC\Desktop\Tazaskin\webp\HinhSua
+Copy * C:\Users\MyPC\Desktop\Tazaskin\webp\bin\hinh
+cd C:\Users\MyPC\Desktop\Tazaskin\webp\bin
+for /R . %I in (*.jpg) do ( cwebp.exe %I -o %~nfI.webp )
+cd hinh
+Del *.jpg
+Ren *.webp *.
+Ren *.jpg *.webp
+Copy * C:\Users\MyPC\Desktop\Tazaskin\webp\HinhSua
+cd C:\Users\MyPC\Desktop\Tazaskin\webp\bin\hinh
+Del *
